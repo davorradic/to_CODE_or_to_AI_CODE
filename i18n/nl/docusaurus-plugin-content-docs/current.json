@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.researchSidebar.category.Research Overview": {
+    "message": "Research Overview",
+    "description": "The label for category Research Overview in sidebar researchSidebar"
+  },
+  "sidebar.researchSidebar.category.Event Details": {
+    "message": "Event Details",
+    "description": "The label for category Event Details in sidebar researchSidebar"
+  },
+  "sidebar.researchSidebar.category.Expected Findings": {
+    "message": "Expected Findings",
+    "description": "The label for category Expected Findings in sidebar researchSidebar"
+  },
+  "sidebar.researchSidebar.category.Participation": {
+    "message": "Participation",
+    "description": "The label for category Participation in sidebar researchSidebar"
+  }
+}

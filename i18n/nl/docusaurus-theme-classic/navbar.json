@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "To Code or to AI Code Research",
+    "description": "The title in the navbar"
+  },
+  "item.label.Home": {
+    "message": "Home",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Research": {
+    "message": "Onderzoek",
+    "description": "Navbar item with label Research"
+  },
+  "item.label.Register": {
+    "message": "Registreren",
+    "description": "Navbar item with label Register"
+  },
+  "item.label.Contact": {
+    "message": "Contact",
+    "description": "Navbar item with label Contact"
+  },
+  "item.label.Updates": {
+    "message": "Updates",
+    "description": "Navbar item with label Updates"
+  },
+  "logo.alt": {
+    "message": "Research Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
