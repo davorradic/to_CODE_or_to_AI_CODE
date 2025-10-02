@@ -26,7 +26,7 @@ Based on our hackathon research, we provide practical frameworks for integrating
 
 ### Phase 2: Faculty Preparation (3-4 weeks)
 1. **AI Tools Training**
-   - Complete our [Video Tutorial Series](/docs/educators/video-tutorials)
+   - Complete our [Video Tutorial Series](/docs/courses)
    - Hands-on practice with selected AI tools
    - Develop prompting and workflow skills
 
@@ -197,4 +197,4 @@ Our research identifies three categories of programming skills:
 - **Research Collaboration**: Email d.radic@roc-nijmegen.nl
 - **Resource Requests**: Use our [resource request form](/docs/educators/resources)
 
-Ready to transform programming education? Start with our [Video Tutorial Series](/docs/educators/video-tutorials) 🎥
+Ready to transform programming education? Start with our [Video Tutorial Series](/docs/courses) 🎥

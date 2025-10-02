@@ -48,7 +48,7 @@ We have 6 different participant groups based on experience level. Choose the one
 ## 🚀 Next Steps
 
 1. **[Take the Skill Assessment](/docs/students/skill-assessment)** - Get personalized recommendations
-2. **[Learn About AI Tools](/docs/students/ai-tools-intro)** - Familiarize yourself with the tools you'll use
+2. **[Learn About AI Tools](/docs/courses)** - Familiarize yourself with the tools you'll use
 3. **[Register for the Hackathon](/docs/registration)** - Secure your spot
 4. **[Join Our Community](/docs/contact)** - Connect with other participants
 
