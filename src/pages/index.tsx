@@ -60,8 +60,8 @@ function StudentFocusedGoals() {
     <section className="padding-vert--xl" style={{ backgroundColor: 'var(--ifm-color-primary-lightest)' }}>
       <div className="container">
         <div className="text--center margin-bottom--xl">
-          <Heading as="h2">🎯 What We Want to Achieve with Students</Heading>
-          <p className="text--lg">This hackathon is designed specifically for students to explore the future of programming</p>
+          <Heading as="h2">🎯 Discover the Best Code Workflows Together</Heading>
+          <p className="text--lg">Students and experts learning from each other - share workflows, discover best practices, and shape the future of AI-assisted programming</p>
         </div>
         <div className="row">
           <div className="col col--4">
