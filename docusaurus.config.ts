@@ -105,7 +105,6 @@ const config: Config = {
             },
             {to: '/docs/registration', label: 'Register'},
             {to: '/docs/students/skill-assessment', label: 'Skill Assessment'},
-            {to: '/docs/educators/video-tutorials', label: 'AI Development Videos'},
           ],
         },
         {
@@ -114,18 +113,7 @@ const config: Config = {
           position: 'left',
           items: [
             {to: '/docs/educators/implementation-guide', label: 'Implementation Guide'},
-            {to: '/docs/educators/video-tutorials', label: 'AI Development Videos'},
             {to: '/docs/educators/resources', label: 'Resources'},
-          ],
-        },
-        {
-          type: 'dropdown',
-          label: 'AI Education',
-          position: 'left',
-          items: [
-            {to: '/docs/educators/video-tutorials', label: 'Video Tutorials'},
-            {to: '/docs/students/ai-tools-intro', label: 'AI Tools Guide'},
-            {to: '/docs/educators/implementation-guide', label: 'Teaching with AI'},
           ],
         },
         {
@@ -171,16 +159,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'ROC Nijmegen',
+              href: 'https://roc-nijmegen.nl',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Projectenplaats',
+              href: 'https://projectenplaats.nl',
             },
           ],
         },
@@ -193,7 +177,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/davorradic',
             },
           ],
         },
