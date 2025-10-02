@@ -119,7 +119,9 @@ function ResearchHighlight() {
                 </p>
                 <p className="text--center">
                   This research is part of my master thesis in Applied AI at <Link to="https://www.iu.org/masters/artificial-intelligence/">IU International University</Link>.
-                  I'm Davor Radic, and I already hold a bachelor's degree in computer science. My goal is to create open-source research that can benefit educational institutions worldwide.
+                  I'm Davor Radic, and I already hold a bachelor's degree in computer science.
+                  I work with the <Link to="https://roc-nijmegen.nl">Software Development team at ROC Nijmegen</Link>, where we're collaborating on this research.
+                  My goal is to create open-source research that can benefit educational institutions worldwide.
                 </p>
               </div>
             </div>
