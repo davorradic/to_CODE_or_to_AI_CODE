@@ -1,5 +1,16 @@
 # Industry Collaboration - Simple & Direct
 
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden'}}>
+  <iframe
+    style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+    src="https://www.youtube.com/embed/GMTtoR6eSH0"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen>
+  </iframe>
+</div>
+
 ## How It Works
 
 **We record code workflows** → **Students share their work** → **Industry learns from real examples** → **Students get jobs**
