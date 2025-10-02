@@ -48,7 +48,7 @@ We hebben 6 verschillende deelnemersgroepen gebaseerd op ervaringsniveau. Kies d
 ## 🚀 Volgende Stappen
 
 1. **[Doe de Vaardigheidsbeoordeling](/docs/students/skill-assessment)** - Krijg gepersonaliseerde aanbevelingen
-2. **[Leer Over AI Tools](/docs/students/ai-tools-intro)** - Maak jezelf vertrouwd met de tools die je gaat gebruiken
+2. **[Leer Over AI Tools](/docs/courses)** - Maak jezelf vertrouwd met de tools die je gaat gebruiken
 3. **[Registreer voor de Hackathon](/docs/registration)** - Verzeker je plek
 4. **[Sluit je aan bij Onze Community](/docs/contact)** - Maak contact met andere deelnemers
 
