@@ -1,117 +1,50 @@
 # Research Data Framework
 
-## Data Collection Architecture
+## 📊 What Data We Collect
 
-### Primary Data Sources
-- **Screen Recording Analysis**: OCR-based code activity tracking
-- **Performance Metrics**: Code quality, completion rates, error patterns
-- **Behavioral Patterns**: AI tool usage, help-seeking, problem-solving approaches
-- **Learning Outcomes**: Skill development, knowledge retention, transfer
+### From Screen Recordings
+- Code activity and workflow patterns
+- AI tool usage (ChatGPT, Copilot, etc.)
+- Application switching behavior
+- Typing vs AI-generated code
 
-### Secondary Data Sources
-- **Pre/Post Assessments**: Skill evaluations and confidence measures
-- **Interview Data**: Qualitative insights and participant experiences
-- **Survey Responses**: Demographic data and self-reported metrics
-- **Code Repositories**: Version control analysis and project evolution
+### Performance Data
+- Code quality metrics
+- Task completion rates
+- Error patterns and debugging approaches
+- Problem-solving speed
 
-## Data Management Protocols
+## 🔒 Privacy & Ethics
 
-### Privacy Protection
-- **Anonymization**: Complete removal of personal identifiers
-- **Consent Management**: Clear participant agreement protocols
-- **Data Minimization**: Collection limited to research-essential information
-- **Secure Storage**: Encrypted databases with access controls
+### Your Data is Protected
+- **Anonymized**: All personal information removed
+- **Secure**: Encrypted storage with access controls
+- **Consent**: Clear agreement before participation
+- **Your Rights**: Access, correction, and withdrawal anytime
 
-### Quality Assurance
-- **Validation Procedures**: Multi-source verification and cross-checking
-- **Reliability Testing**: Inter-rater agreement and consistency measures
-- **Bias Mitigation**: Systematic sampling and representative participants
-- **Error Detection**: Automated quality checks and manual verification
+### Compliance
+- GDPR compliant (European data protection)
+- IRB approved (ethics review)
+- Research-only use
 
-## Analysis Framework
+## 📈 How We Analyze Data
 
-### Quantitative Methods
-- **Statistical Analysis**: Regression models, ANOVA, correlation studies
-- **Machine Learning**: Pattern recognition and predictive modeling
-- **Time Series Analysis**: Learning progression and skill development
-- **Comparative Studies**: Treatment vs. control group analyses
+**Simple Approach:**
+- Count and measure objective behaviors (time, clicks, switches)
+- Find patterns in workflows (what works best)
+- Compare different approaches (AI-heavy vs balanced)
+- Learn together what makes effective coding workflows
 
-### Qualitative Methods
-- **Thematic Analysis**: Interview and observation coding
-- **Grounded Theory**: Emergent pattern identification
-- **Case Study Analysis**: In-depth individual and group examinations
-- **Phenomenological Study**: Experience and meaning exploration
+## 🤝 Open Research
 
-## Open Data Initiative
+### Data Sharing
+- Anonymized datasets available for academic use
+- Methodology fully documented
+- Support for replication studies
 
-### Data Sharing Commitment
-- **Public Datasets**: Anonymized research data for community use
-- **Methodology Transparency**: Complete protocol documentation
-- **Replication Support**: Materials for independent verification
-- **Collaborative Research**: Multi-institutional data pooling
-
-### Access Protocols
-- **Research Community**: Free access for academic and educational use
-- **Commercial Use**: Licensing agreements for industry applications
-- **Student Projects**: Educational access with supervision requirements
-- **International Collaboration**: Cross-border data sharing agreements
-
-## Technical Infrastructure
-
-### Data Processing Pipeline
-- **Collection**: Automated recording and manual observation integration
-- **Preprocessing**: Data cleaning, validation, and transformation
-- **Analysis**: Statistical computing and visualization generation
-- **Reporting**: Automated dashboard and report generation
-
-### Storage Architecture
-- **Primary Storage**: Secure cloud infrastructure with redundancy
-- **Backup Systems**: Multiple geographic locations and version control
-- **Archive Management**: Long-term preservation and accessibility
-- **Migration Planning**: Future-proof formats and platform independence
-
-## Ethical Considerations
-
-### Institutional Review Board (IRB)
-- **Protocol Approval**: Comprehensive ethics review and approval
-- **Ongoing Monitoring**: Regular compliance assessment and updates
-- **Risk Assessment**: Participant safety and data security evaluation
-- **Community Benefit**: Research impact and social value consideration
-
-### Participant Rights
-- **Informed Consent**: Clear understanding of research participation
-- **Withdrawal Options**: Right to discontinue without penalty
-- **Data Control**: Access to personal data and correction rights
-- **Results Sharing**: Participant access to research findings
-
-## Impact Measurement
-
-### Academic Impact
-- **Publication Metrics**: Citation rates and journal quality indicators
-- **Research Influence**: Policy changes and curriculum adoptions
-- **Community Engagement**: Researcher collaboration and network growth
-- **Student Development**: Graduate research opportunities and skills
-
-### Educational Impact
-- **Curriculum Integration**: Research-informed teaching practice changes
-- **Student Outcomes**: Learning improvement and career preparation
-- **Faculty Development**: Professional growth and teaching effectiveness
-- **Institutional Change**: Policy and practice transformation
-
-## Data Governance
-
-### Oversight Structure
-- **Data Stewardship Committee**: Multi-stakeholder governance body
-- **Ethics Advisory Board**: Independent ethical review and guidance
-- **Technical Review Panel**: Data quality and methodology assessment
-- **Community Representatives**: Student and educator voice inclusion
-
-### Compliance Framework
-- **Regulatory Adherence**: GDPR, FERPA, and institutional requirements
-- **Standard Conformance**: Research data management best practices
-- **Audit Procedures**: Regular compliance review and improvement
-- **Incident Response**: Data breach and security event protocols
+### Want Access?
+Contact: d.radic@roc-nijmegen.nl
 
 ---
 
-*Interested in accessing or contributing to our research data? [Contact our research team](/docs/researchers/collaboration) for partnership opportunities.*
+*All research conducted ethically with participant consent and data protection*
