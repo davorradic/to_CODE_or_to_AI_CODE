@@ -92,6 +92,7 @@ const config: Config = {
       },
       items: [
         {to: '/', label: 'Home', position: 'left'},
+        {to: '/docs/courses', label: 'Courses', position: 'left'},
         {
           type: 'dropdown',
           label: 'For Students',

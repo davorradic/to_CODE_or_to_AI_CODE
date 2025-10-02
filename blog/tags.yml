@@ -1,19 +1,19 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+ai:
+  label: AI
+  permalink: /ai
+  description: Artificial Intelligence in programming
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+education:
+  label: Education
+  permalink: /education
+  description: Programming education and learning
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+research:
+  label: Research
+  permalink: /research
+  description: Academic research and studies
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+hackathon:
+  label: Hackathon
+  permalink: /hackathon
+  description: Hackathon events and activities
