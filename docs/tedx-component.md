@@ -4,57 +4,30 @@ sidebar_position: 7
 
 # TEDx Knowledge Sharing
 
-## 🎤 Day 4: Knowledge Sharing Summit
+## 🎤 TEDx Talks - Day 2 Evening
 
-The fourth day transforms participants from researchers into educators, creating a powerful platform for sharing discoveries about the future of programming education.
+At the end of the hackathon, we host TEDx-style talks where **5 industry experts** share their insights on AI in software development.
 
-### TEDx-Style Presentations
-- **6-minute talks** by participants from each group
-- **Professional video recording** for global distribution
-- **Structured format** focusing on key insights and implications
-- **Audience interaction** with industry experts and educators
+### What to Expect
+- **15-minute talks** by industry professionals
+- Topics: AI workflows, hiring AI talent, real-world development practices
+- **Q&A sessions** with speakers
+- Networking opportunities
 
-## 🎯 Presentation Structure
+## 🌍 Our TEDx Experience
 
-### Core Elements
-1. **Personal Journey**: How the participant's perspective evolved
-2. **Key Discovery**: The most surprising or significant finding
-3. **Practical Implications**: How this changes programming education
-4. **Call to Action**: What educators/students should do differently
+We have experience organizing professional TEDx events:
 
-### Presentation Topics by Group
-- **Blank Slate Coders**: "Learning to Code with AI from Day One"
-- **Code Curious**: "When Theory Meets AI-Assisted Practice"
-- **Traditional Builders**: "Unlearning and Relearning in the AI Era"
-- **AI Natives**: "Growing Up Digital: A Native's Perspective"
-- **Hybrid Learners**: "Bridging Two Worlds of Development"
-- **Industry Veterans**: "What Companies Actually Need Now"
+**Previous Event:**
+[TEDx ROC Nijmegen](https://tedx-roc-nijmegen.nl/)
 
-## 🌍 Global Impact Strategy
+This event showed us how powerful knowledge sharing through TEDx format can be for inspiring and educating communities.
 
-### Distribution Channels
-- **Open Educational Resources**: Free access for institutions
-- **Social Media**: Clips optimized for different platforms
-- **Academic Conferences**: Integration with education research
-- **Industry Events**: Professional development contexts
+## 🎯 Why TEDx Format?
 
-### Accessibility Features
-- **Multiple languages**: Subtitles and translations
-- **Various formats**: Short clips, full presentations, podcasts
-- **Interactive elements**: Discussion guides and workshop materials
+- **Engaging**: Short, focused talks that hold attention
+- **Professional**: High-quality presentations
+- **Inspiring**: Real-world insights from experts
+- **Accessible**: Easy to understand for all skill levels
 
-## 🔍 Knowledge Synthesis Process
-
-### Cross-Group Dialogue
-- **Structured debates** between different participant groups
-- **Collaborative mapping** of essential vs. obsolete skills
-- **Consensus building** on educational recommendations
-- **Future research** planning and prioritization
-
-### Industry Expert Panel
-- **Professional developers** respond to participant findings
-- **Hiring managers** discuss real-world skill requirements
-- **Educators** explore implementation challenges
-- **Researchers** identify areas for further investigation
-
-This TEDx component ensures that insights don't remain within the research team but are actively shared with the global programming education community.
+**Join us to learn from industry leaders!**

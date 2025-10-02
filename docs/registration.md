@@ -92,15 +92,8 @@ Join us in this groundbreaking study that will reshape programming education for
 **Technovium Innovation Hub**
 Heyendaalse Weg, Nijmegen, Netherlands
 
-### Dates
-**March 15-18, 2026**
-- Day 1-3: Intensive hackathon experience
-- Day 4: TEDx Knowledge Sharing Summit
-
-### Schedule
-- **Daily Hours**: 9:00 AM - 8:00 PM (Days 1-3)
-- **TEDx Day**: 9:00 AM - 6:00 PM (Day 4)
-- **Meals Provided**: Breakfast, lunch, dinner, and snacks
+### Full Schedule
+See the complete [Event Timeline](/docs/timeline) for detailed day-by-day breakdown.
 
 ## 🤝 Research Partnership
 
