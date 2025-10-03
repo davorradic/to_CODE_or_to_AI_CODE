@@ -21,6 +21,7 @@
 - See how students use AI in real development workflows
 - Learn modern AI-assisted coding practices through workshops
 - Discover how the next generation approaches problems
+- **[Access our AI Development Courses & Workshops](/docs/courses)** - Free training for your team
 
 ### Hire AI Talent
 - Watch students work in real-time
