@@ -13,8 +13,8 @@
 
 💬 **[Join the discussion on LinkedIn](https://www.linkedin.com/posts/davoronline_aiineducation-futureofwork-edtech-activity-7380578375054172160-bkkH?utm_source=share&utm_medium=member_desktop)** - Share your thoughts and help shape this research!
 
-<a href="https://www.linkedin.com/posts/davoronline_aiineducation-futureofwork-edtech-activity-7380578375054172160-bkkH?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer">
-  <img src="/comment_on_linkedin.jpg" alt="Join the LinkedIn discussion" style={{maxWidth: '100%', height: 'auto', marginTop: '1rem', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', cursor: 'pointer'}} />
+<a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7380578228303761408?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7380578228303761408%2C7380603947407028225%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287380603947407028225%2Curn%3Ali%3AugcPost%3A7380578228303761408%29" target="_blank" rel="noopener noreferrer">
+  <img src="/comment_on_linkedin.jpg" alt="Join the LinkedIn discussion - See Pascal Mariany's comment" style={{maxWidth: '100%', height: 'auto', marginTop: '1rem', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', cursor: 'pointer'}} />
 </a>
 
 ---
