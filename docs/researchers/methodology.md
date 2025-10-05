@@ -11,6 +11,14 @@
   </iframe>
 </div>
 
+💬 **[Join the discussion on LinkedIn](https://www.linkedin.com/posts/davoronline_aiineducation-futureofwork-edtech-activity-7380578375054172160-bkkH?utm_source=share&utm_medium=member_desktop)** - Share your thoughts and help shape this research!
+
+<a href="https://www.linkedin.com/posts/davoronline_aiineducation-futureofwork-edtech-activity-7380578375054172160-bkkH?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer">
+  <img src="/comment_on_linkedin.jpg" alt="Join the LinkedIn discussion" style={{maxWidth: '100%', height: 'auto', marginTop: '1rem', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', cursor: 'pointer'}} />
+</a>
+
+---
+
 ## 🎯 Simple Approach
 
 **1-hour hackathon** → **Screen recording** → **AI analysis** → **Learn best workflows together**
