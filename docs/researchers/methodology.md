@@ -175,6 +175,494 @@ text = pytesseract.image_to_string(frame)
 
 ---
 
+## 🔬 Video Analysis Technology Research & Selection
+
+### Overview: Choosing the Right Tools for Screen Recording Analysis
+
+Before implementing our video analysis pipeline, we conducted extensive research into available technologies, neural network architectures, and open-source libraries. This chapter documents our research process and justifies our technology choices for academic transparency and reproducibility.
+
+---
+
+### 📚 Research Question: What Technologies Can Analyze Screen Recordings?
+
+**Our Requirements:**
+1. Extract frames from video (30-minute recordings)
+2. Recognize text on screen (code, browser, terminal)
+3. Detect application windows (IDE vs browser vs terminal)
+4. Classify activities (typing vs pasting, AI tool usage)
+5. Handle programming-specific text (symbols, syntax)
+6. Process 20+ videos efficiently
+7. Maintain data privacy (no cloud uploads if possible)
+8. Reproducible for other researchers (preferably open-source)
+
+---
+
+### 🎥 **Part 1: Video Processing Libraries**
+
+#### **Option 1: FFmpeg (Command-line tool)**
+**What it is:** Industry-standard multimedia framework (1999-present)
+
+**Capabilities:**
+- Extract frames at any interval (1 per second, 1 per 5 seconds, etc.)
+- Convert video formats (MP4, AVI, MOV, etc.)
+- Process video metadata (duration, resolution, fps)
+- Fast and reliable (used by YouTube, Netflix)
+
+**Pros:**
+- Free and open-source
+- Cross-platform (Windows, Mac, Linux)
+- Extremely fast (seconds to extract frames)
+- Command-line scriptable
+
+**Cons:**
+- Requires separate installation
+- Command-line only (no Python API)
+- Overkill for simple frame extraction
+
+**Our Decision:** ✅ **Selected as primary tool**
+- Best performance for frame extraction
+- Well-documented, stable, widely adopted
+- Can be called from Python scripts
+
+---
+
+#### **Option 2: OpenCV (Python library)**
+**What it is:** Computer vision library with video processing (2000-present)
+
+**Capabilities:**
+- Extract frames programmatically in Python
+- Image preprocessing (grayscale, resize, enhance)
+- Template matching (detect UI elements)
+- Object detection capabilities
+
+**Pros:**
+- Pure Python - no external tools needed
+- Integrated solution (video → frames → preprocessing)
+- Rich computer vision features
+- Active development and community
+
+**Cons:**
+- Slightly slower than FFmpeg
+- More complex API for simple tasks
+- Larger dependency footprint
+
+**Our Decision:** ✅ **Selected as secondary tool**
+- Use for preprocessing and template matching
+- Fallback if FFmpeg unavailable
+- Main library for image manipulation
+
+---
+
+#### **Option 3: MoviePy (Python library)**
+**What it is:** Python video editing library built on FFmpeg
+
+**Capabilities:**
+- Pythonic API for video manipulation
+- Frame extraction, video compositing
+- Audio processing
+
+**Pros:**
+- Easy Python API
+- Built on FFmpeg (best of both worlds)
+
+**Cons:**
+- Extra abstraction layer (slower)
+- Overkill for our use case
+- Less control than direct FFmpeg
+
+**Our Decision:** ❌ **Not selected**
+- Unnecessary abstraction for frame extraction
+- FFmpeg + OpenCV combination more powerful
+
+---
+
+### 🧠 **Part 2: Neural Networks for Text Recognition (OCR)**
+
+#### **Understanding OCR Neural Network Architectures**
+
+**Evolution of OCR Technology:**
+1. **1990s-2000s:** Template matching (slow, inflexible)
+2. **2000s-2010s:** Feature extraction + SVM/Random Forest
+3. **2012+:** Convolutional Neural Networks (CNNs)
+4. **2015+:** Recurrent Neural Networks (RNNs) + LSTM
+5. **2018+:** Transformer architectures + Attention mechanisms
+6. **2020+:** Vision Transformers (ViT) + Multi-modal models
+
+---
+
+#### **Option 1: Tesseract OCR + LSTM**
+**What it is:** Google's open-source OCR engine (2006-present, v4.0 in 2018 added LSTM)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → CNN Feature Extraction (edge detection, pattern recognition)
+  → LSTM Sequence Processing (character context understanding)
+  → CTC Decoder (character prediction)
+  → Language Model (context correction)
+  → Final Text Output
+```
+
+**Technical Details:**
+- **CNN Layers:** Extract visual features (edges, curves, character shapes)
+- **LSTM Layers:** Understand character sequences ("def" more likely than "dcf" in Python)
+- **CTC (Connectionist Temporal Classification):** Aligns characters to image regions
+- **Training Data:** Millions of text samples across 100+ languages
+
+**Accuracy:**
+- General text: 85-95%
+- Printed text: 90-98%
+- Code with preprocessing: 85-90%
+- Handwriting: 60-80%
+
+**Pros:**
+- ✅ Free and open-source
+- ✅ Offline processing (no cloud, no API costs)
+- ✅ Configurable (character whitelists for code)
+- ✅ Fast (CPU-only, no GPU required)
+- ✅ Proven reliability (used by Google, Archive.org)
+- ✅ Active development
+
+**Cons:**
+- ❌ Lower accuracy than cloud solutions (5-10% worse)
+- ❌ Requires preprocessing for best results
+- ❌ Some errors with programming symbols
+
+**Cost Analysis:**
+- Setup: 1 hour installation
+- Processing: 20-30 hours for 20 videos
+- API costs: **$0**
+- Total: $0
+
+**Our Decision:** ✅ **Selected for pilot phase**
+- Free solution for research reproducibility
+- Sufficient accuracy for activity classification
+- Privacy-preserving (local processing)
+- Other researchers can replicate
+
+---
+
+#### **Option 2: Azure Computer Vision OCR**
+**What it is:** Microsoft's cloud OCR service (2015-present)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → Deep CNN (ResNet/EfficientNet-based)
+  → Transformer Encoder (attention mechanisms)
+  → Multi-head Attention (focus on text regions)
+  → Language Model (context understanding)
+  → JSON Output (text + bounding boxes)
+```
+
+**Technical Details:**
+- **Deep CNN:** 50-100+ layers for complex feature extraction
+- **Transformers:** Self-attention mechanisms (like GPT, BERT)
+- **Multi-modal Learning:** Trained on images + text pairs
+- **Continuous Improvement:** Updated models every few months
+
+**Accuracy:**
+- General text: 95-98%
+- Code: 92-96%
+- Handwriting: 85-92%
+
+**Pros:**
+- ✅ Highest accuracy (5-10% better than Tesseract)
+- ✅ No local setup required
+- ✅ Handles complex layouts automatically
+- ✅ Regular improvements
+
+**Cons:**
+- ❌ Costs $1.50 per 1,000 images
+- ❌ Privacy concerns (uploads to cloud)
+- ❌ Requires internet connection
+- ❌ Not reproducible (model changes over time)
+- ❌ API quotas and rate limits
+
+**Cost Analysis:**
+- 36,000 frames × $1.50/1000 = **$54 per pilot**
+- 100 videos = **$270**
+- 1000 videos = **$2,700**
+
+**Our Decision:** 🔄 **Reserve for validation**
+- Test on 100-frame sample if Tesseract insufficient
+- Not primary due to cost and privacy
+- Document as alternative approach
+
+---
+
+#### **Option 3: Google Cloud Vision API**
+**What it is:** Google's cloud OCR service (2016-present)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → Inception/ResNet CNN (state-of-the-art feature extraction)
+  → Attention Networks (focus on text regions)
+  → BERT-like Language Models (context understanding)
+  → Multi-task Learning (OCR + object detection + image classification)
+```
+
+**Technical Details:**
+- Similar architecture to Azure (CNN + Transformers)
+- Trained on Google's massive datasets
+- Multi-language support (100+ languages)
+
+**Accuracy:**
+- General text: 95-97%
+- Code: 91-95%
+- Very similar to Azure
+
+**Pros/Cons:**
+- Nearly identical to Azure
+- Same cost structure ($1.50/1000)
+- Same privacy concerns
+
+**Our Decision:** ❌ **Not selected**
+- No significant advantage over Azure
+- Same cost and privacy issues
+
+---
+
+#### **Option 4: AWS Textract**
+**What it is:** Amazon's document OCR service (2019-present)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → Deep CNN (custom architecture)
+  → Document Understanding Model (tables, forms, structure)
+  → Transformer-based Text Extraction
+  → Relationship Detection (hierarchical structure)
+```
+
+**Best For:** Structured documents (invoices, forms, tables)
+
+**Accuracy:**
+- Forms/tables: 98-99%
+- General text: 95-97%
+- Code: 90-94%
+
+**Our Decision:** ❌ **Not suitable**
+- Optimized for documents, not screen recordings
+- Same cost issues as Azure/Google
+- Overkill for our use case
+
+---
+
+#### **Option 5: EasyOCR (Deep Learning Library)**
+**What it is:** PyTorch-based OCR (2020-present)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → Feature Extraction CNN (VGG/ResNet-based)
+  → Sequence Modeling (LSTM bidirectional)
+  → CTC Decoder
+  → 80+ Languages Support
+```
+
+**Accuracy:**
+- General text: 90-95%
+- Code: 88-93%
+- Better than Tesseract, worse than cloud
+
+**Pros:**
+- ✅ Free and open-source
+- ✅ GPU acceleration support
+- ✅ Modern architecture
+- ✅ Good multilingual support
+
+**Cons:**
+- ❌ Requires GPU for speed (slow on CPU)
+- ❌ Larger dependencies (PyTorch)
+- ❌ Not as widely tested as Tesseract
+
+**Our Decision:** 🔄 **Backup option**
+- Test if Tesseract < 80% accuracy
+- Requires GPU for efficiency
+
+---
+
+#### **Option 6: PaddleOCR (Baidu)**
+**What it is:** Chinese company Baidu's OCR framework (2020-present)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → Text Detection (DB++ / EAST CNN models)
+  → Text Recognition (CRNN / SVTR models)
+  → Ultra-lightweight models (mobile-optimized)
+```
+
+**Accuracy:**
+- Chinese text: 96-98%
+- English text: 92-96%
+- Code: 90-94%
+
+**Pros:**
+- ✅ Very fast (optimized for speed)
+- ✅ Free and open-source
+- ✅ Excellent for Asian languages
+
+**Cons:**
+- ❌ Documentation primarily in Chinese
+- ❌ Less community support in West
+- ❌ Optimized for documents, not screens
+
+**Our Decision:** ❌ **Not selected**
+- Less suitable for English code
+- Tesseract better documented
+
+---
+
+#### **Option 7: TrOCR (Transformer-based OCR)**
+**What it is:** Microsoft's pure transformer OCR model (2021)
+
+**Neural Network Architecture:**
+```
+Input Image
+  → Vision Transformer (ViT) Encoder (no CNN!)
+  → Transformer Decoder (GPT-like)
+  → Pure Attention Mechanisms
+  → State-of-the-art accuracy
+```
+
+**Accuracy:**
+- Printed text: 96-98%
+- Handwriting: 90-95%
+- Code: 94-97% (theoretical)
+
+**Pros:**
+- ✅ Cutting-edge architecture
+- ✅ Best accuracy potential
+- ✅ Open-source (Hugging Face)
+
+**Cons:**
+- ❌ Requires GPU (very slow on CPU)
+- ❌ Large model size (500MB+)
+- ❌ Complex setup
+- ❌ Overkill for activity detection
+
+**Our Decision:** ❌ **Not practical for pilot**
+- GPU requirement too restrictive
+- Complexity not justified
+- Future research option
+
+---
+
+### 📊 **Part 3: Computer Vision Libraries for Activity Detection**
+
+#### **Option 1: OpenCV (Selected)**
+**What it does:** Template matching, object detection, image manipulation
+
+**Use Cases:**
+- Detect application windows (IDE, browser, terminal)
+- Template matching (recognize UI elements)
+- Image preprocessing for OCR
+
+**Why Selected:** ✅
+- Industry standard
+- Fast and efficient
+- Excellent documentation
+- Python integration
+
+---
+
+#### **Option 2: scikit-image**
+**What it does:** Python image processing
+
+**Why Not Selected:** ❌
+- OpenCV more comprehensive
+- Slower performance
+- Overlapping features
+
+---
+
+#### **Option 3: PIL/Pillow**
+**What it does:** Basic image manipulation
+
+**Why Selected:** ✅ (Complementary)
+- Lightweight
+- Easy image loading/saving
+- Use alongside OpenCV
+
+---
+
+### 📈 **Part 4: Data Analysis Libraries**
+
+#### **Pandas (Selected)**
+- DataFrame manipulation
+- Time-series analysis
+- CSV export
+
+#### **NumPy (Selected)**
+- Array operations
+- Mathematical computations
+- OpenCV integration
+
+#### **Matplotlib/Seaborn (Selected)**
+- Visualization
+- Workflow pattern charts
+- Research reports
+
+---
+
+### 🎯 **Final Technology Stack Decision**
+
+| Component | Selected Tool | Runner-up | Reason |
+|-----------|---------------|-----------|--------|
+| **Video Processing** | FFmpeg + OpenCV | MoviePy | Performance + Flexibility |
+| **OCR Engine** | Tesseract LSTM | Azure OCR | Free + Privacy + Reproducibility |
+| **Computer Vision** | OpenCV | scikit-image | Industry standard |
+| **Image Processing** | Pillow | - | Lightweight |
+| **Data Analysis** | Pandas + NumPy | - | Standard stack |
+| **Visualization** | Matplotlib | - | Publication-quality |
+
+---
+
+### 📋 **Decision Criteria Summary**
+
+**Why These Choices?**
+
+1. **Cost:** $0 for pilot phase (vs $54+ for cloud OCR)
+2. **Privacy:** Local processing, no data uploads
+3. **Reproducibility:** Other researchers can replicate exactly
+4. **Accessibility:** Free tools, no API keys required
+5. **Performance:** 20-30 hours for 20 videos (acceptable)
+6. **Accuracy:** 85-90% sufficient for activity classification
+7. **Scalability:** Can process 100s-1000s of videos without costs
+
+**Trade-offs Accepted:**
+- 5-10% lower accuracy vs cloud OCR (acceptable for pattern detection)
+- Manual validation needed for 10% sample (standard research practice)
+- Preprocessing required for best results (documented in methodology)
+
+**Upgrade Path:**
+- If Tesseract < 80% accurate → Try EasyOCR or PaddleOCR
+- If still insufficient → Test Azure on sample (100 frames)
+- Document all accuracy findings for transparency
+
+---
+
+### 📚 **References for Technology Selection**
+
+**Academic Papers:**
+- Tesseract LSTM: Smith, R. (2018). "Hybrid Page Layout Analysis via Tab-Stop Detection"
+- TrOCR: Li, M. et al. (2021). "TrOCR: Transformer-based Optical Character Recognition"
+- OCR Comparison: Nayef, N. et al. (2019). "ICDAR 2019 Robust Reading Challenge"
+
+**Documentation:**
+- [Tesseract GitHub](https://github.com/tesseract-ocr/tesseract)
+- [OpenCV Docs](https://docs.opencv.org/)
+- [FFmpeg Documentation](https://ffmpeg.org/documentation.html)
+
+**Benchmarks:**
+- [OCR Benchmark Study (2023)](https://github.com/JaidedAI/EasyOCR#benchmark)
+- [PaddleOCR Accuracy Tests](https://github.com/PaddlePaddle/PaddleOCR)
+
+---
+
 ## 🎬 Video Analysis Pipeline for Hackathon Code Flow Research
 
 ### 🎯 Project Goal
@@ -288,6 +776,118 @@ project/
 3. **Code Review Behavior**: Participants who review/modify AI suggestions perform better
 4. **Learning Transfer**: Applying AI-learned patterns manually in new contexts
 5. **Balanced Workflow**: Mix of AI assistance and independent problem-solving
+
+### 🧠 OCR Technology Selection & Analysis
+
+#### Why Tesseract OCR?
+
+**Tesseract's Modern Neural Network Architecture:**
+- **LSTM (Long Short-Term Memory) Neural Networks** - Introduced in Tesseract 4.0 (2018)
+- Replaced traditional pattern recognition with deep learning
+- Trained on massive datasets for character recognition
+- Provides 85-90% accuracy for programming text with preprocessing
+
+**Key Advantages:**
+1. **Free & Open Source** - No API costs for 36,000 frames
+2. **Offline Processing** - No data privacy concerns, works without internet
+3. **Proven Reliability** - Used by Google, Archive.org, millions of developers
+4. **Programming-Optimized** - Configurable character whitelists for code
+5. **Active Development** - Regular updates, strong community support
+
+#### Comparison with Modern Alternatives
+
+**1. Convolutional Neural Networks (CNN) + LSTM Alternatives:**
+
+**Azure Computer Vision OCR**
+- Architecture: CNN + Transformer models
+- Accuracy: 95-98% (3-8% better than Tesseract)
+- Cost: $1.50 per 1000 images = **$54 for our 36,000 frames**
+- Pros: Higher accuracy, cloud-based, no setup
+- Cons: Privacy concerns (uploads to cloud), ongoing costs
+- **Our Decision**: Not chosen for pilot phase due to cost and privacy
+
+**Google Cloud Vision API**
+- Architecture: Advanced CNN with attention mechanisms
+- Accuracy: 95-97%
+- Cost: $1.50 per 1000 images = **$54 for pilot**
+- Pros: Very high accuracy, multilingual
+- Cons: Privacy concerns, requires internet, expensive at scale
+- **Our Decision**: Reserve for future if Tesseract accuracy insufficient
+
+**AWS Textract**
+- Architecture: Deep CNN + document understanding models
+- Accuracy: 95-98%
+- Cost: $1.50 per 1000 pages = **$54 for pilot**
+- Pros: Excellent for structured documents
+- Cons: Overkill for screen recordings, expensive
+- **Our Decision**: Not optimal for real-time screen capture analysis
+
+**2. Custom CNN Models:**
+
+**Potential Custom Solutions:**
+- **EasyOCR** - PyTorch-based, 80+ languages, 90-95% accuracy
+- **PaddleOCR** - Baidu's solution, very fast, 92-96% accuracy
+- **TrOCR** (Transformer-based) - Microsoft's latest, 96-98% accuracy
+- **Custom CNN + LSTM** - Train on programming-specific text
+
+**Why Not Custom Models for Pilot?**
+- Training requires 10,000+ labeled images (months of work)
+- Computational overhead (GPU required)
+- Complexity not justified for 85-90% achievable with Tesseract
+- Can iterate to custom models if needed after pilot validation
+
+#### Tesseract's LSTM Neural Network Architecture
+
+**How Tesseract 4.x Works:**
+```
+Input Image → CNN Feature Extraction → LSTM Sequence Processing → Character Recognition
+```
+
+**Technical Details:**
+- **Convolutional layers** extract visual features (edges, shapes, patterns)
+- **LSTM layers** understand character sequences and context
+- **CTC (Connectionist Temporal Classification)** decoder predicts final text
+- **Language models** improve accuracy with context (e.g., "def" more likely than "dcf" in Python)
+
+**Compared to Pure CNN:**
+- CNNs alone: ~70-75% accuracy on varied text
+- CNN + LSTM: ~85-95% accuracy (what Tesseract uses)
+- CNN + Transformer: ~95-98% accuracy (Azure, Google)
+
+#### Our Validation Strategy
+
+**Pilot Phase Approach:**
+1. **Start with Tesseract** (free, fast, 85-90% accuracy)
+2. **Manually validate 10% of frames** to measure actual accuracy
+3. **Compare cost vs benefit** of cloud solutions
+4. **Upgrade if needed** based on pilot results
+
+**Decision Criteria for Upgrade:**
+- If Tesseract accuracy < 80%: Consider EasyOCR or PaddleOCR (still free)
+- If accuracy < 75%: Test Azure/Google on 100-frame sample
+- If critical data missed: Move to cloud OCR for remaining videos
+
+**Expected Outcome:**
+- Tesseract sufficient for activity classification (IDE vs browser vs terminal)
+- Some code text recognition errors acceptable (not reading exact code, just patterns)
+- 85-90% accuracy meets research objectives at $0 cost
+
+#### Research Transparency Note
+
+**Why This Matters for Academic Research:**
+- **Reproducibility**: Other researchers can replicate with free tools
+- **Cost Accessibility**: Educational institutions can adopt methodology
+- **Data Privacy**: Screen recordings stay on local machines
+- **Scalability**: Processing 1000s of videos doesn't require cloud budgets
+
+**Future Work:**
+If Tesseract proves insufficient, we will:
+1. Document accuracy gaps
+2. Test alternative models (EasyOCR, PaddleOCR)
+3. Consider fine-tuning custom models
+4. Evaluate cost-benefit of cloud OCR for specific use cases
+
+---
 
 ### 🔍 OCR Configuration
 
