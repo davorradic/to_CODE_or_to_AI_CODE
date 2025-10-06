@@ -961,6 +961,262 @@ pip install -r requirements.txt
 
 ---
 
+## 📱 Future Enhancement: Custom Flutter Screen Recording Application
+
+### ⚠️ Status: Low Priority - Time Permitting
+
+**Current Approach Limitations:**
+- Video OCR has 85-90% accuracy (acceptable but not perfect)
+- Window switching detection requires complex template matching
+- Difficult to distinguish typing vs pasting from video alone
+- Post-processing of 30-minute videos takes 60-90 minutes each
+- No real-time metadata capture
+
+---
+
+### 🚀 Proposed Solution: Custom Recording App
+
+**Vision:**
+Build a cross-platform Flutter application that records screen activity WITH structured metadata, making analysis faster, more accurate, and more detailed.
+
+**Why Flutter?**
+- ✅ Cross-platform (Windows, macOS, Linux) - one codebase
+- ✅ Modern UI framework (easy to build participant-friendly interface)
+- ✅ Native performance
+- ✅ Access to platform-specific APIs (window tracking, keyboard events)
+- ✅ Active development community
+
+---
+
+### 🎯 Enhanced Data Collection Capabilities
+
+**What the App Would Capture:**
+
+**1. Video Recording (Same as Current)**
+- Screen capture at 30 fps
+- Full resolution recording
+
+**2. Structured Metadata (NEW - The Game Changer)**
+```json
+{
+  "session_id": "video_001",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "events": [
+    {
+      "time": 45.2,
+      "event_type": "window_focus",
+      "window": "Visual Studio Code",
+      "process": "Code.exe",
+      "title": "main.py - project_name"
+    },
+    {
+      "time": 45.3,
+      "event_type": "keyboard_activity",
+      "typing_speed": 120,
+      "characters_typed": 45,
+      "paste_event": false
+    },
+    {
+      "time": 67.8,
+      "event_type": "window_focus",
+      "window": "Google Chrome",
+      "process": "chrome.exe",
+      "title": "ChatGPT - chat.openai.com"
+    },
+    {
+      "time": 78.5,
+      "event_type": "paste_event",
+      "clipboard_size": 450,
+      "source_window": "Google Chrome",
+      "target_window": "Visual Studio Code"
+    }
+  ]
+}
+```
+
+**3. Application Tracking**
+- Active window at any moment (no OCR needed!)
+- Window title (file name, browser tab)
+- Application process name
+- Focus duration per window
+
+**4. Keyboard & Mouse Activity**
+- Typing speed in real-time
+- Paste events (Ctrl+V / Cmd+V detection)
+- Clipboard content size (not content - privacy)
+- Mouse clicks (frequency, location)
+
+**5. AI Tool Detection**
+- Detect when ChatGPT, Claude, Copilot windows are active
+- Track time spent in AI tools vs IDE
+- Capture transitions between tools
+
+---
+
+### 🎁 Benefits Over Video-Only Approach
+
+| Metric | Current (Video OCR) | Future (Flutter App) |
+|--------|---------------------|----------------------|
+| **Window Detection Accuracy** | 85-90% (OCR) | 100% (OS-level API) |
+| **Typing vs Paste Detection** | Difficult (frame comparison) | 100% (keyboard events) |
+| **Processing Time** | 60-90 min per video | Real-time + 5 min post-processing |
+| **Storage Required** | 18 GB for 20 videos | 10 GB (metadata = few MB) |
+| **Analysis Complexity** | Complex (OCR + classification) | Simple (read JSON) |
+| **Accuracy** | 85-90% | 99%+ |
+| **Privacy** | Video contains all screen content | Can exclude sensitive windows |
+| **Real-time Feedback** | No | Yes (show participant their stats) |
+
+---
+
+### 🛠️ Technical Implementation Plan
+
+**Flutter Packages Needed:**
+```yaml
+dependencies:
+  screen_capturer: ^0.2.0        # Screen recording
+  window_manager: ^0.3.0          # Window detection
+  hotkey_manager: ^0.1.0          # Keyboard event tracking
+  path_provider: ^2.1.0           # File storage
+  dio: ^5.4.0                     # Upload to server
+  flutter_riverpod: ^2.4.0        # State management
+```
+
+**Platform-Specific APIs:**
+- **Windows:** Win32 API for window tracking
+- **macOS:** Accessibility API for window info
+- **Linux:** X11/Wayland for window management
+
+**Core Features:**
+1. **Recording Interface**
+   - Start/Stop recording button
+   - Real-time timer
+   - Active window indicator
+   - Privacy mode (exclude certain windows)
+
+2. **Background Tracking**
+   - Monitor active window every 100ms
+   - Track keyboard events (typing speed, paste)
+   - Log application switches
+   - Save metadata to JSON file
+
+3. **Privacy Controls**
+   - Blacklist windows (e.g., personal email, banking)
+   - Blur specific screen regions
+   - Participant can review data before upload
+
+4. **Upload & Sync**
+   - Save locally first
+   - Optional upload to research server
+   - Encrypted transmission
+
+---
+
+### 📊 Enhanced Research Insights Available
+
+**With Structured Metadata, We Can Answer:**
+
+1. **Exact Window Switching Patterns**
+   - "Participants switch from IDE to ChatGPT every 3.2 minutes on average"
+   - No OCR guessing - 100% accuracy
+
+2. **Typing vs AI-Generated Code Ratio**
+   - "45% of code was typed manually, 55% pasted from AI tools"
+   - Detect exact paste events
+
+3. **Real-time AI Tool Usage**
+   - "Participants spent 28% of time in AI tools (vs 35% optimal)"
+   - Track exact durations
+
+4. **Context Switching Cost**
+   - "Average task resumption takes 23 seconds after switching to AI tool"
+   - Measure focus recovery time
+
+5. **Workflow Efficiency Patterns**
+   - "Participants who switch to AI less than 5 times/hour complete 20% more tasks"
+   - Correlate metrics with outcomes
+
+---
+
+### ⏱️ Development Timeline Estimate
+
+**If Time Available Before Hackathon:**
+
+| Phase | Duration | Tasks |
+|-------|----------|-------|
+| **Phase 1: Prototype** | 1-2 weeks | Screen recording + basic window tracking |
+| **Phase 2: Metadata** | 1 week | Keyboard events, JSON export |
+| **Phase 3: UI Polish** | 3-5 days | User-friendly interface |
+| **Phase 4: Testing** | 3-5 days | Test on multiple OS, fix bugs |
+| **Phase 5: Deployment** | 2 days | Package installers, documentation |
+| **Total** | **3-4 weeks** | Full working application |
+
+**Minimum Viable Product (MVP):**
+- **1 week:** Basic recording + window tracking + JSON export
+- Sufficient for hackathon if needed
+
+---
+
+### 🔄 Fallback Strategy
+
+**Priority Decision Tree:**
+
+```
+Is there 3+ weeks before hackathon?
+├── YES → Build Flutter app (enhanced data)
+└── NO → Use video recording + OCR (proven approach)
+    └── Can still achieve 85-90% accuracy
+```
+
+**Hybrid Approach:**
+- Start with video OCR pipeline (safe, proven)
+- Develop Flutter app in parallel (if time allows)
+- Test Flutter app with 5 participants first
+- Roll out to all if successful
+- Use video OCR as backup
+
+---
+
+### 💡 Post-Hackathon Value
+
+**Even if Not Ready for Initial Hackathon:**
+
+1. **Future Research Events**
+   - Use for next hackathon (2027)
+   - Offer to other research institutions
+   - Open-source the tool
+
+2. **Student Learning Tool**
+   - Students can track their own workflow
+   - Real-time feedback: "You've spent 40% of time in ChatGPT"
+   - Self-improvement insights
+
+3. **Industry Tool**
+   - Companies interested in productivity analysis
+   - Developer workflow optimization
+   - Training program effectiveness
+
+4. **Academic Contribution**
+   - Publish methodology paper
+   - Share tool with research community
+   - Enable reproducible workflow research
+
+---
+
+### 📋 Decision: Low Priority, High Value
+
+**Current Status:**
+- ⏸️ **On Hold** - Not critical for pilot phase
+- 📹 **Video OCR pipeline sufficient** for 20-video pilot
+- 🚀 **Build if time available** (3-4 weeks before hackathon)
+- 📝 **Document for future** enhancement
+
+**Reassess Timeline:**
+- If hackathon date > 8 weeks away → Build Flutter app
+- If hackathon date < 8 weeks away → Use video OCR
+- Post-hackathon → Build Flutter app for future research
+
+---
+
 ## 📞 Contact Research Team
 - **Principal Investigator**: d.radic@roc-nijmegen.nl
 - **Direct Line**: +31 6 14454426
