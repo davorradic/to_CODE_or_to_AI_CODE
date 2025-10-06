@@ -173,6 +173,194 @@ text = pytesseract.image_to_string(frame)
 
 **No Manual Processing Required** - All data analysis is automated using AI-powered video analysis
 
+---
+
+## 🎬 Video Analysis Pipeline for Hackathon Code Flow Research
+
+### 🎯 Project Goal
+Analyze screen recordings of programming sessions to understand optimal AI tool usage patterns and code flow in hackathon environments. Extract data to identify where developers achieve best results.
+
+### 🎬 Pilot Study Scope
+- **20 videos** × **30 minutes** each
+- **1 second frame extraction** (1,800 frames per video)
+- **Free solution**: Tesseract OCR (no Azure costs)
+- **Total frames**: 36,000
+- **Storage**: ~18 GB
+- **Processing time**: 20-30 hours
+
+### 🔧 Technology Stack
+- **FFmpeg/OpenCV**: Video frame extraction
+- **Tesseract OCR**: Text recognition from screens
+- **Python**: Processing pipeline
+- **OpenCV + PIL/Pillow**: Image preprocessing
+- **Pandas**: Data analysis
+- **JSON/CSV**: Data storage
+
+### 📁 Project Structure
+```
+project/
+├── raw_videos/              # Input: MP4/AVI video files
+├── data/                    # Processed data per video
+│   ├── video_01/
+│   │   ├── frames/          # 1,800 raw frames (PNG/JPG)
+│   │   ├── processed/       # Enhanced frames for OCR
+│   │   ├── ocr_output/      # Text extraction results
+│   │   ├── timeline.json    # Structured timeline data
+│   │   └── metrics.json     # Calculated metrics
+├── scripts/                 # Processing pipeline
+│   ├── 1_extract_frames.py
+│   ├── 2_preprocess.py
+│   ├── 3_detect_regions.py
+│   ├── 4_run_ocr.py
+│   ├── 5_classify_activity.py
+│   ├── 6_structure_data.py
+│   └── 7_calculate_metrics.py
+├── analysis/                # Cross-video analysis
+├── results/                 # Final outputs
+└── requirements.txt
+```
+
+### 🚀 Pipeline Overview
+
+**Step 1: Frame Extraction**
+- Extract 1 frame per second using FFmpeg/OpenCV
+- Output: 1,800 PNG images with timestamp naming
+
+**Step 2: Image Preprocessing**
+- Grayscale conversion, contrast enhancement, denoising
+- Output: Enhanced frames optimized for OCR
+
+**Step 3: Screen Region Detection**
+- Identify IDE, browser, terminal zones using template matching
+- Output: Bounding box coordinates for each region
+
+**Step 4: OCR Text Extraction**
+- Run Tesseract OCR on each region with programming-specific config
+- Output: Extracted text per region with confidence scores
+
+**Step 5: Activity Classification**
+- Detect active window, typing vs paste, AI tool usage
+- Output: Activity labels and metrics per frame
+
+**Step 6: Data Structuring**
+- Build timeline, identify activity segments
+- Output: Structured JSON with timeline and segments
+
+**Step 7: Metrics Calculation**
+- Calculate time allocation, AI usage metrics, coding metrics
+- Output: Summary metrics (CSV/JSON)
+
+**Step 8: Cross-Video Analysis**
+- Compare participants, find success patterns
+- Output: Research insights, visualizations, recommendations
+
+### 📋 Key Data Points Extracted
+
+**Per Frame (1 second intervals):**
+```json
+{
+  "frame": 450,
+  "timestamp": "00:07:30",
+  "active_window": "vscode",
+  "activity": "typing",
+  "typing_speed": 45,
+  "ai_tool_visible": false,
+  "language": "python",
+  "error_present": false,
+  "confidence": 0.87
+}
+```
+
+**Per Video Summary:**
+- Duration (seconds)
+- IDE time percentage
+- AI tool time percentage
+- Number of AI interactions
+- Context switch frequency
+- Average typing speed
+- Error count
+- Manual vs AI-generated code ratio
+
+### 🎯 Success Patterns to Identify
+
+1. **Optimal AI Usage**: 25-35% of time shows best results
+2. **Strategic AI Use**: AI for boilerplate, manual for core logic
+3. **Code Review Behavior**: Participants who review/modify AI suggestions perform better
+4. **Learning Transfer**: Applying AI-learned patterns manually in new contexts
+5. **Balanced Workflow**: Mix of AI assistance and independent problem-solving
+
+### 🔍 OCR Configuration
+
+**Tesseract Settings for Code:**
+```python
+tesseract_config = '--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,;:(){}[]<>=+-*/\'"_@#$%^&|\\~`?! \t\n'
+```
+
+**Preprocessing for Better OCR:**
+- Grayscale conversion
+- Binary thresholding
+- Gaussian blur for noise reduction
+- Image scaling (1.5-2x) for small text
+- Contrast adjustment
+
+### 📊 Expected Results
+
+**Processing Time:**
+- Per video: 60-90 minutes
+- All 20 videos: 20-30 hours
+- Can parallelize: 5 videos simultaneously on multi-core CPU
+
+**Storage Requirements:**
+- Raw frames: ~15 GB
+- Processed frames: ~3 GB
+- OCR output: ~500 MB
+- Total: ~18 GB
+
+**Accuracy Expectations:**
+- Tesseract OCR: 85-90% accuracy with preprocessing
+- Activity classification: Manual validation on 10% sample
+- Metrics reliability: Cross-reference with self-reported data
+
+### 🚦 Getting Started
+
+**Prerequisites:**
+```bash
+# Install Tesseract OCR
+sudo apt-get install tesseract-ocr  # Linux
+brew install tesseract              # macOS
+
+# Install FFmpeg (optional)
+sudo apt-get install ffmpeg         # Linux
+brew install ffmpeg                 # macOS
+
+# Python packages
+pip install -r requirements.txt
+```
+
+**Quick Start:**
+1. Place videos in `raw_videos/`
+2. Run extraction: `python scripts/1_extract_frames.py`
+3. Preprocess: `python scripts/2_preprocess.py`
+4. Run OCR: `python scripts/4_run_ocr.py`
+5. Analyze: `python scripts/7_calculate_metrics.py`
+
+### 🎓 Research Questions Answered
+
+1. **How much AI usage is optimal?** → Time allocation metrics
+2. **When should developers use AI vs manual coding?** → Activity pattern analysis
+3. **What workflows produce best code quality?** → Correlation analysis
+4. **How do experience levels differ in AI usage?** → Cross-participant comparison
+5. **What are signs of AI dependency vs collaboration?** → Behavioral pattern detection
+
+### 💡 Key Insights from Methodology
+
+- **Mixed approach wins**: Neither pure AI nor pure manual coding produces best results
+- **Code review matters**: Students who critically evaluate AI suggestions learn better
+- **Context matters**: Different tasks require different AI usage levels
+- **Learning transfer**: Best outcomes when students apply AI-learned patterns independently
+
+---
+
 ## 📞 Contact Research Team
 - **Principal Investigator**: d.radic@roc-nijmegen.nl
 - **Direct Line**: +31 6 14454426
