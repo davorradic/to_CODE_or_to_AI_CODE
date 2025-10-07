@@ -236,9 +236,7 @@ As an industry professional, your evaluation helps us understand:
 3. **[Join Our Judge Community Discord](https://discord.gg/tocodeortoacode)**
 
 ### Questions?
-- **Judge Coordinator**: d.radic@roc-nijmegen.nl
 - **Technical Questions**: d.radic@roc-nijmegen.nl
-- **Research Inquiries**: d.radic@roc-nijmegen.nl
 - **Direct Line**: +31 6 14454426
 
 ---

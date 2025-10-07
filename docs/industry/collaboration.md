@@ -123,8 +123,6 @@
 
 ### Contact Information:
 - **Partnership Coordinator**: d.radic@roc-nijmegen.nl
-- **Technical Lead**: d.radic@roc-nijmegen.nl
-- **Research Director**: d.radic@roc-nijmegen.nl
 - **Direct Line**: +31 6 14454426
 
 ### Quick Application:
