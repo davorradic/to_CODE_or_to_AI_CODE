@@ -74,7 +74,7 @@
 **Location Options:**
 - 🏢 Online (Teams/Zoom)
 - 🏫 At ROC Nijmegen Technovium
-- 💼 At your office (students visit)
+- 💼 At your office
 
 **Next Steps After Demo:**
 - Integrate into our curriculum
