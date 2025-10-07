@@ -33,6 +33,68 @@
 - Position your company as an AI development leader
 - Help shape the future workforce
 
+---
+
+## 🎯 Live Workflow Demo Sessions
+
+### Inspire Students with Your Real Development Process
+
+**Invitation:** Share how you work with AI tools in a live demonstration session. Show students and educators what modern professional development looks like.
+
+**What You Do:**
+- Demonstrate your actual coding workflow (30 minutes)
+- Show how you use AI tools (ChatGPT, Copilot, Claude, etc.)
+- Build something related to your company's expertise
+- Answer questions about professional development
+
+**Session Format (45 minutes total):**
+
+**10 minutes - Introduction:**
+- Your company and what you build
+- The project you'll demonstrate
+- Tools and approach you'll use
+
+**20-30 minutes - Live Building:**
+- Hands-on coding with screen recording
+- Real workflow: when you use AI, when you code manually
+- Problem-solving in real-time
+- Show your thought process
+
+**5-10 minutes - Q&A:**
+- Students ask questions
+- Share tips and insights
+- Discuss career paths
+
+**Project Guidelines:**
+- **Duration:** Completable in 30 minutes
+- **Focus:** Web or app development (our curriculum)
+- **Examples:** Backend API, frontend component, database integration
+- **Theme:** Related to your company (optional) or student-friendly
+
+**Location Options:**
+- 🏢 Online (Teams/Zoom)
+- 🏫 At ROC Nijmegen Technovium
+- 💼 At your office (students visit)
+
+**Next Steps After Demo:**
+- Integrate into our curriculum
+- Optional: Guest lecture
+- Optional: Follow-up hackathon at your company
+- We analyze the workflow recording for research
+
+**Why Share Your Workflow?**
+- ✅ Inspire next generation of developers
+- ✅ Show students what real work looks like
+- ✅ Recruit talent (students see your expertise)
+- ✅ Position your company as innovation leader
+- ✅ Contribute to educational research
+- ✅ Build relationship with ROC Nijmegen
+
+
+**[Contact us to schedule your demo session](/docs/contact)** 👉
+
+---
+
 ## Partnership Levels
 
 ### Free Partnership
