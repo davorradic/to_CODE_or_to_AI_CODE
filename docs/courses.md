@@ -10,13 +10,25 @@ Free courses and resources for everyone learning AI-assisted software developmen
 
 Comprehensive video series for students, educators, and industry professionals.
 
-### 🌟 Series 1: Foundation - Beyond the AI Hype
-*Perfect for: Everyone starting with AI tools*
+### 🌟 Series 1A: Non-Tech Track - "AI Tools for Problem Solving"
+*Perfect for: Business people, designers, managers, non-technical roles*
 
-- **Video 1.1**: AI Tools Overview - Facts vs Fiction (15 min)
-- **Video 1.2**: Setting Up Your AI Development Environment (20 min)
-- **Video 1.3**: Prompt Engineering Basics (18 min)
-- **Video 1.4**: Code Review with AI (22 min)
+- **Video 1A.1**: What Can AI Actually Do? Real Use Cases vs Hype (15 min)
+- **Video 1A.2**: Communicating with AI - Prompt Basics (18 min)
+- **Video 1A.3**: Using AI for Daily Tasks - Automation, Analysis, Content (20 min)
+- **Video 1A.4**: VIBE Coding - Building Without Writing Code (25 min)
+- **Video 1A.5**: No-Code Automation - n8n, Zapier, and ChatGPT Workflows (22 min)
+- **Video 1A.6**: MCP - Connect AI to Your Tools (Excel, Blender, Any Program) (25 min)
+- **Video 1A.7**: Understanding Technical Concepts Through AI (20 min)
+
+### 🌟 Series 1B: Tech Track - "Industry-Ready Fundamentals"
+*Perfect for: Aspiring junior developers, CS students*
+
+- **Video 1B.1**: AI Tools in Real Development Teams (15 min)
+- **Video 1B.2**: Developer Environment Setup + Git Basics (25 min)
+- **Video 1B.3**: Code Quality - What Junior Devs Must Know (20 min)
+- **Video 1B.4**: Reading & Understanding Code with AI (22 min)
+- **Video 1B.5**: The Junior Developer Checklist - Industry Expectations (15 min)
 
 ### 🚀 Series 2: Practical Building
 *Perfect for: Students and developers wanting hands-on projects*
